@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  margin: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", serif;
+  font-weight: 700;
+  font-size: 1.2vw;
+  background-color: #222831;
+  color: #EEEEEE;
+}
+body p {
+  margin: 0;
+}
+body a {
+  text-decoration: none;
+  color: #EEEEEE;
+}
+body i {
+  color: #00ADB5;
+}
+body .btn {
+  color: #EEEEEE;
+  font-weight: 700;
+}
+body .navbar {
+  margin: 1vw 3vw;
+  display: flex;
+  flex-direction: column;
+}
+body .navbar .float1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body .navbar .float1 i {
+  color: white;
+  transition: 1s;
+}
+body .navbar .float1 i:hover {
+  color: #00ADB5;
+}
+body .navbar .float1 span {
+  display: flex;
+  align-items: center;
+}
+body .navbar .float1 span .leftLinks {
+  margin-right: 1vw;
+}
+body .navbar .float1 span .rightLinks {
+  margin-left: 1vw;
+}
+body .navbar .float1 span .lang .dropstart button {
+  background: none;
+  border: 0;
+}
+body .navbar .float1 span .lang .dropstart .dropdown-menu {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.5vw;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+body .navbar .float1 span .lang .dropstart .dropdown-menu a {
+  color: #222831;
+}
+body .navbar .float1 span .lang .dropstart .dropdown-menu a:hover {
+  background-color: #00ADB5;
+}
+body .navbar .float2 {
+  margin: 1vw 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .navbar .float2 span {
+  display: flex;
+}
+body .navbar .float2 span .cateList .dropdown button {
+  border: 0.1vw solid #00ADB5;
+  border-radius: 0.5vw;
+}
+body .navbar .float2 span .cateList .dropdown .dropdown-menu {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.5vw;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+body .navbar .float2 span .cateList .dropdown .dropdown-menu a {
+  color: #EEEEEE;
+}
+body .navbar .float2 span .cateList .dropdown .dropdown-menu a:hover {
+  background-color: #00ADB5;
+}
+body .navbar .float2 span .search {
+  margin-left: 2vw;
+}
+body .navbar .float2 span .search .input-group input {
+  width: 30vw;
+  border-radius: 0.5vw;
+  border: 0.1vw solid #00ADB5;
+  color: rgb(30, 30, 30);
+}
+body .navbar .float2 span .search .input-group button {
+  border-right: 0.1vw solid #00ADB5;
+  border-top: 0.1vw solid #00ADB5;
+  border-bottom: 0.1vw solid #00ADB5;
+}
+body .navbar .float2 span .search .input-group .form-control:focus {
+  box-shadow: none;
+}
+body .navbar .float3 {
+  width: 100%;
+  display: flex;
+  border: 0.1vw solid #00ADB5;
+  padding: 0.4vw;
+}
+body .navbar .float3 .trendHead {
+  margin-right: 0.5vw;
+  padding-right: 0.5vw;
+}
+body .navbar .float3 .trendCarusel {
+  width: 95%;
+}
+body .navbar .float3 .trendCarusel div a {
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  transition: 1s;
+}
+body .navbar .float3 .trendCarusel div a:hover {
+  color: #00ADB5;
+}
+body header .hotNews {
+  margin: 1vw 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+body header .hotNews .left {
+  border: 0.1vw solid #00ADB5;
+  width: 47vw;
+  height: 30vw;
+  position: relative;
+  overflow: hidden;
+}
+body header .hotNews .left .img img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1s;
+}
+body header .hotNews .left .info {
+  position: absolute;
+  bottom: 2vw;
+  left: 1vw;
+  font-size: 1.6vw;
+  display: flex;
+  flex-direction: column;
+}
+body header .hotNews .left .info .title {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+body header .hotNews .left:hover .img img {
+  transform: scale(1.2);
+}
+body header .hotNews .right {
+  display: flex;
+  flex-direction: column;
+}
+body header .hotNews .right .top {
+  border: 0.1vw solid #00ADB5;
+  width: 47vw;
+  height: 15vw;
+  position: relative;
+  overflow: hidden;
+}
+body header .hotNews .right .top .img img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1s;
+}
+body header .hotNews .right .top .info {
+  position: absolute;
+  bottom: 2vw;
+  left: 1vw;
+  font-size: 1.6vw;
+  display: flex;
+  flex-direction: column;
+}
+body header .hotNews .right .top .info .title {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+body header .hotNews .right .top:hover .img img {
+  transform: scale(1.2);
+}
+body header .hotNews .right .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+body header .hotNews .right .bottom .block {
+  border: 0.1vw solid #00ADB5;
+  width: 23.5vw;
+  height: 15vw;
+  position: relative;
+  overflow: hidden;
+}
+body header .hotNews .right .bottom .block .img img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1s;
+}
+body header .hotNews .right .bottom .block .info {
+  position: absolute;
+  bottom: 2vw;
+  left: 1vw;
+  font-size: 1.6vw;
+  display: flex;
+  flex-direction: column;
+}
+body header .hotNews .right .bottom .block .info .title {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+body header .hotNews .right .bottom .block:hover .img img {
+  transform: scale(1.2);
+}
+body main {
+  min-height: 100vh;
+}
+body main .postPage .float1 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+body main .postPage .float1 img {
+  width: 93vw;
+  height: 30vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2vw;
+  border: 0.1vw solid #00ADB5;
+  filter: brightness(0.5);
+}
+body main .postPage .float1 .info {
+  position: absolute;
+  height: 80%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .postPage .float1 .info .name {
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 1vw;
+}
+body main .postPage .float2 {
+  margin: 1vw 3vw;
+}
+body main .postPage .float2 .code {
+  margin: 0.5vw 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1vw 3vw;
+  border-radius: 0.5vw;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+body main .postPage .float2 .code a {
+  color: blue;
+}
+body main .postPage .float2 .link {
+  margin: 1vw 0;
+}
+body main .postPage .float2 .link p a {
+  border: 0.1vw solid #00ADB5;
+  padding: 1vw 3vw;
+  border-radius: 0.5vw;
+}
+body main .filterPage .articlesAndCategoriesBlock {
+  display: flex;
+  justify-content: space-between;
+  margin: 1vw 3vw;
+}
+body main .filterPage .articlesAndCategoriesBlock .categories {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+body main .filterPage .articlesAndCategoriesBlock .categories a {
+  border: 0.1vw solid #00ADB5;
+  margin-bottom: 0.5vw;
+  padding: 0.5vw;
+  border-radius: 0.4vw;
+  transition: 1s;
+}
+body main .filterPage .articlesAndCategoriesBlock .categories a:hover {
+  border: 0.1vw solid #EEEEEE;
+  color: #00ADB5;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles {
+  width: 75%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  grid-gap: 2vw;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article {
+  position: relative;
+  border-bottom: 0.1vw solid #00ADB5;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  width: 20vw;
+  height: 27.5vw;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article .img img {
+  width: 100%;
+  height: 20vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article .info {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5vw 0;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article .info .name {
+  font-size: 1.4vw;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article .btns .absalut {
+  position: absolute;
+  padding: 0.2vw 0.5vw;
+  border-radius: 0.4vw;
+  font-size: 1vw;
+  color: #EEEEEE;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article .btns .complated {
+  top: 1vw;
+  left: 1vw;
+  background-color: purple;
+}
+body main .filterPage .articlesAndCategoriesBlock .articles .article .btns .sale {
+  top: 1vw;
+  right: 1vw;
+  background-color: red;
+}
+body main .articlesBlock {
+  margin: 1vw 3vw;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+body main .articlesBlock .articlesClass {
+  width: 70%;
+}
+body main .articlesBlock .articlesClass .headText {
+  font-size: 2vw;
+  margin-bottom: 1vw;
+}
+body main .articlesBlock .articlesClass .articles {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  grid-gap: 2vw;
+}
+body main .articlesBlock .articlesClass .articles .article {
+  position: relative;
+  border-bottom: 0.1vw solid #00ADB5;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  width: 31vw;
+  height: 39vw;
+}
+body main .articlesBlock .articlesClass .articles .article .img img {
+  width: 100%;
+  height: 32vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .articlesBlock .articlesClass .articles .article .info {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5vw 0;
+}
+body main .articlesBlock .articlesClass .articles .article .info .name {
+  font-size: 1.4vw;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+body main .articlesBlock .articlesClass .articles .article .btns .absalut {
+  position: absolute;
+  padding: 0.2vw 0.5vw;
+  border-radius: 0.4vw;
+  font-size: 1vw;
+  color: #EEEEEE;
+}
+body main .articlesBlock .articlesClass .articles .article .btns .complated {
+  top: 1vw;
+  left: 1vw;
+  background-color: purple;
+}
+body main .articlesBlock .articlesClass .articles .article .btns .sale {
+  top: 1vw;
+  right: 1vw;
+  background-color: red;
+}
+body main .articlesBlock .categoriesList {
+  position: sticky;
+  align-self: flex-start;
+  position: sticky;
+  top: 1vw;
+  right: 0;
+  min-height: 40vw;
+  overflow: auto;
+  width: 25vw;
+}
+body main .articlesBlock .categoriesList .headText {
+  font-size: 2vw;
+  text-align: end;
+  margin-bottom: 1vw;
+}
+body main .articlesBlock .categoriesList .categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .articlesBlock .categoriesList .categories .hrline {
+  border-bottom: 0.1vw solid #00ADB5;
+  width: 100%;
+  margin-bottom: 0.8vw;
+}
+body main .articlesBlock .categoriesList .categories a {
+  width: 100%;
+  margin-bottom: 0.8vw;
+  font-size: 1.4vw;
+  border: 0.1vw solid #00ADB5;
+  color: #EEEEEE;
+  text-align: end;
+  padding: 0.5vw;
+  transition: 1s;
+  border-radius: 0.5vw 0 0 0.5vw;
+}
+body main .articlesBlock .categoriesList .categories a:hover {
+  color: #00ADB5;
+  border: 0.1vw solid #EEEEEE;
+}
+body footer {
+  margin: 1vw 3vw;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-30 12:48+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\templates\addons\nav.html:6
+msgid "Əlaqə"
+msgstr "Contact"
+
+#: .\templates\addons\nav.html:7
+msgid "Sifariş ver"
+msgstr "Order now"
+
+#: .\templates\addons\nav.html:8
+msgid "Haqqımda"
+msgstr "About me"
+
+#: .\templates\addons\nav.html:27
+msgid "Əsas səhifə"
+msgstr "Home page"
+
+#: .\templates\addons\nav.html:32
+msgid "Məqalələr"
+msgstr "Articles"
+
+#: .\templates\addons\nav.html:34 .\templates\filter.html:10
+#: .\templates\index.html:48
+msgid "Bütün məqalələr"
+msgstr "All articles"
+
+#: .\templates\addons\nav.html:50
+msgid "Trend"
+msgstr "Trend"
+
+#: .\templates\filter.html:15
+msgid "Məlumat tapılmadı"
+msgstr "Information not found"
+
+#: .\templates\filter.html:31 .\templates\index.html:25
+msgid "Təhvil verildi"
+msgstr "Submitted"
+
+#: .\templates\filter.html:34 .\templates\index.html:28
+msgid "Endirimdə"
+msgstr "Discount"
+
+#: .\templates\filter.html:42 .\templates\index.html:36
+msgid "Məqalə tapılmadı"
+msgstr "article not found"
+
+#: .\templates\index.html:10
+msgid "Son paylaşılmış məqalələr"
+msgstr "Recently shared articles"
+
+#: .\templates\index.html:42
+msgid "Ən çox baxılan bölmələr"
+msgstr "Most Viewed Sections"

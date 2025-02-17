@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block main %}
+    {% include 'addons/header.html' %}
+    <main>
+        <div class="articlesBlock">
+            <div class="articlesClass">
+                <div class="headText">
+                    <p>{% trans 'Son paylaşılmış məqalələr' %}</p>
+                </div>
+                {% if articles %}
+                    <div class="articles">
+                        {%  for article in articles %}
+                            <div class="article">
+                                <a href="{% url 'post' article.slug %}" class="img">
+                                    <img src="{{ article.img }}" alt="{{ article.name }}">
+                                </a>
+                                <div class="info">
+                                    <a href="{% url 'filter' article.cate.slug %}" class="cate">{{ article.cate }}</a>
+                                    <a href="{% url 'post' article.slug %}" class="name">{{ article.name }}</a>
+                                </div>
+                                <div class="btns">
+                                    {% if article.complated %}
+                                        <p class="complated absalut">{% trans 'Təhvil verildi' %}</p>
+                                    {% endif %}
+                                    {% if article.sale %}
+                                        <p class="sale absalut">{% trans 'Endirimdə' %}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="bottomText">
+                        <p>{% trans 'Məqalə tapılmadı' %} :(</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="categoriesList">
+                <div class="headText">
+                    <p>{% trans 'Ən çox baxılan bölmələr' %}</p>
+                </div>
+                <div class="categories">
+                    {% for category in categories %}
+                        <a href="{% url 'filter' category.slug %}">{{category.name}}</a>
+                    {% endfor %}
+                    <div class="hrline"></div>
+                    <a href="{% url 'alllist' %}">{% trans 'Bütün məqalələr' %}</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

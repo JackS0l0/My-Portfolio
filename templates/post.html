@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block main %}
+    <main>
+        <div class="postPage">
+            <div class="float1">
+                <img src="{{object.img}}" alt="{{object.name}}">
+                <div class="info">
+                    <a href="{% url 'filter' object.cate.slug %}" class="cate">{{ object.cate }}</a>
+                    <p class="name">{{ object.name }}</p>
+                </div>
+            </div>
+            <div class="float2">
+                <p>{{ object.desc | safe }}</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

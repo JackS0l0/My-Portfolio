@@ -1,0 +1,54 @@
+{% load static %}
+{% load i18n %}
+<header>
+    <div class="hotNews">
+        {% for article in advertLeftBox %}
+            <div class="left">
+                <a href="{% url 'post' article.slug %}" class="img">
+                    <img src="{{ article.img }}" alt="{{ article.name }}">
+                </a>
+                <div class="info">
+                    <a href="{% url 'filter' article.cate.slug %}">{{ article.cate }}</a>
+                    <a href="{% url 'post' article.slug %}" class="title">{{ article.name }}</a>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="right">
+            {% for article in advertRightTopBox %}
+                <div class="top">
+                    <a href="{% url 'post' article.slug %}" class="img">
+                        <img src="{{ article.img }}" alt="{{ article.name }}">
+                    </a>
+                    <div class="info">
+                        <a href="{% url 'filter' article.cate.slug %}">{{ article.cate }}</a>
+                        <a href="{% url 'post' article.slug %}" class="title">{{ article.name }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="bottom">
+                {% for article in advertRightBottomLeftBox %}
+                    <div class="block">
+                        <a href="{% url 'post' article.slug %}" class="img">
+                            <img src="{{ article.img }}" alt="{{ article.name }}">
+                        </a>
+                        <div class="info">
+                            <a href="{% url 'filter' article.cate.slug %}">{{ article.cate }}</a>
+                            <a href="{% url 'post' article.slug %}" class="title">{{ article.name }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for article in advertRightBottomRightBox %}
+                    <div class="block">
+                        <a href="{% url 'post' article.slug %}" class="img">
+                            <img src="{{ article.img }}" alt="{{ article.name }}">
+                        </a>
+                        <div class="info">
+                            <a href="{% url 'filter' article.cate.slug %}">{{ article.cate }}</a>
+                            <a href="{% url 'post' article.slug %}" class="title">{{ article.name }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</header>

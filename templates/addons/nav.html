@@ -1,0 +1,59 @@
+{% load static %}
+{% load i18n %}
+<div class="navbar">
+    <div class="float1">
+        <span>
+            <a href="{% url 'contact' %}" class="leftLinks">{% trans 'Əlaqə' %}</a>
+            <a href="{% url 'order' %}" class="leftLinks">{% trans 'Sifariş ver' %}</a>
+            <a href="{% url 'about' %}" class="leftLinks">{% trans 'Haqqımda' %}</a>
+        </span>
+        <span>
+            <div class="lang">
+                <div class="btn-group dropstart">
+                    <button type="button" class="langbtn" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-translate"></i></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'set-language' 'az' %}">Azərbaycanca</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set-language' 'ru' %}">Русский</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set-language' 'en' %}">English</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="{% url 'index' %}" class="rightLinks"><i class="bi bi-telegram"></i></a>
+            <a href="{% url 'index' %}" class="rightLinks"><i class="bi bi-whatsapp"></i></a>   
+        </span>
+    </div>
+    <div class="float2">
+        <span>
+            <a href="{% url 'index' %}" class="logo">{% trans 'Əsas səhifə' %}</a>
+        </span>
+        <span>
+            <div class="cateList">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{% trans 'Məqalələr' %}</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'alllist' %}">{% trans 'Bütün məqalələr' %}</a></li>
+                        {% for category in categories %}
+                            <li><a class="dropdown-item" href="{% url 'filter' category.slug %}">{{category.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Axtar" aria-label="Axtar" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </span>
+    </div>
+    <div class="float3">
+        <p class="trendHead">{% trans 'Trend' %}:</p>
+        <div class="trendCarusel">
+            {% for article in advertTrends %}
+                <div>
+                    <a href="{% url 'post' article.slug %}">{{article.advertTrendTxt}}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

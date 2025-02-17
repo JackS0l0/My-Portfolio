@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block main %}
+    <main>
+        <div class="filterPage">
+            <div class="articlesAndCategoriesBlock">
+                <div class="categories">
+                    {% if categories %}
+                    <a href="{% url 'alllist' %}">{% trans 'Bütün məqalələr' %}</a>
+                        {% for category in categories %}
+                            <a href="{% url 'filter' category.slug %}">{{category.name}}</a>
+                        {% endfor %}
+                    {% else %}
+                        <p>{% trans 'Məlumat tapılmadı' %}</p>
+                    {% endif %}
+                </div>
+                {% if articles %}
+                    <div class="articles">
+                        {%  for article in articles %}
+                            <div class="article">
+                                <a href="{% url 'post' article.slug %}" class="img">
+                                    <img src="{{ article.img }}" alt="{{ article.name }}">
+                                </a>
+                                <div class="info">
+                                    <a href="{% url 'filter' article.cate.slug %}" class="cate">{{ article.cate }}</a>
+                                    <a href="{% url 'post' article.slug %}" class="name">{{ article.name }}</a>
+                                </div>
+                                <div class="btns">
+                                    {% if article.complated %}
+                                        <p class="complated absalut">{% trans 'Təhvil verildi' %}</p>
+                                    {% endif %}
+                                    {% if article.sale %}
+                                        <p class="sale absalut">{% trans 'Endirimdə' %}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="bottomText">
+                        <p>{% trans 'Məqalə tapılmadı' %} :(</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="pagiBlock">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page=1"><i class="bi bi-chevron-bar-left"></i></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="bi bi-chevron-left"></i></a>
+                            </li>
+                        {% endif %}
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if num >= page_obj.number|add:-2 and num <= page_obj.number|add:2 %}
+                                <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ paginator.num_pages }}"><i class="bi bi-chevron-bar-right"></i></a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+{% endblock %}
