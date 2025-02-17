@@ -2,7 +2,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z3%n#^%jq33-x!6hr4*8b@f6bse6&m9dz3$35iw27pe0sx5b8j'
 DEBUG = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","vercel.app"]
 INSTALLED_APPS = [
     'jazzmin',
     'modeltranslation',
